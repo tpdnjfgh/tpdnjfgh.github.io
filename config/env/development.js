@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/mean-dev',
+	db: 'mongodb://localhost/tpdnjfgh-dev',
 	app: {
 		title: '세월호 소통채널'
 	},
