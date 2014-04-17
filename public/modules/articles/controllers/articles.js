@@ -7,6 +7,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
         $scope.create = function() {
             var article = new Articles({
                 title: this.title,
+                url: this.url,
                 content: this.content
             });
             article.$save(function(response) {
@@ -14,6 +15,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
             });
 
             this.title = '';
+            this.url = '';
             this.content = '';
         };
 

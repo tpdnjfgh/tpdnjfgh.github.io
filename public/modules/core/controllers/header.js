@@ -6,11 +6,7 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
 		$scope.isCollapsed = false;
 
 		$scope.menu = [{
-			title: 'Articles',
-			link: 'articles',
-			uiRoute: '/articles'
-		}, {
-			title: 'New Article',
+			title: '글작성',
 			link: 'articles/create',
 			uiRoute: '/articles/create'
 		}];

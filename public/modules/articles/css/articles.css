@@ -1,0 +1,31 @@
+
+.ariticle-panel {
+  margin-bottom: 10px
+}
+
+
+.header-panel {
+  background-color: #2C81BA;
+  padding: 20px 0px 20px 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.title-panel {
+   color:#2C81BA;
+}
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  /*background-color: #ADCE43;*/
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
