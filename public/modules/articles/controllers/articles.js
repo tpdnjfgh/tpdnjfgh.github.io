@@ -4,6 +4,18 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
     function($scope, $stateParams, $location, Authentication, Articles) {
         $scope.authentication = Authentication;
 
+        $scope.vote = function(article) {
+            if (!article.updated) {
+                article.updated = [];
+            }
+            
+            article.votes += 1;
+
+            article.$update(function() {
+                // $location.path('articles/' + article._id);
+            });
+        }
+
         $scope.create = function() {
             var article = new Articles({
                 title: this.title,

@@ -15,6 +15,7 @@
 		<em class="text-muted">Posted on {{article.created | date:'mediumDate'}} by {{article.user.displayName}}</em>
 	</small>
 	<a data-ng-href="{{article.url}}"><p>관련글: {{article.url}}</p></a>
+
 	<pre class="lead" style="font-size:14px">
 {{article.content}}
 	</pre>
