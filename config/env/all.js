@@ -5,13 +5,13 @@ var path = require('path'),
 
 module.exports = {
 	app: {
-		title: '세월호 소통채널',
-		description: '세월호 소통채널',
-		keywords: '세월호, 소통채널'
+		title: '세월호',
+		description: '세월호',
+		keywords: '세월호'
 	},
 	root: rootPath,
 	port: process.env.PORT || 3000,
 	templateEngine: 'swig',
-	sessionSecret: 'MEAN',
+	sessionSecret: 'oneSecret',
 	sessionCollection: 'sessions'
 };

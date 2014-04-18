@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/tpdnjfgh-dev',
+	db: 'mongodb://localhost/one-dev',
 	app: {
-		title: '세월호 소통채널'
+		title: '세월호'
 	},
 	facebook: {
 		clientID: '292918034205739',
