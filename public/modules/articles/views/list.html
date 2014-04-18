@@ -13,7 +13,6 @@
             <a data-ng-href="#!" data-ng-click="toggleMode();" ng-init="is_newest=true"><span class="pull-right" style="padding-top:15px"><strong>손가락으로 하늘을 가릴쏘냐</strong></span></a>
         </div>
         <div class="col-lg-12">
-            <hr>
             <div class="list-group" data-ng-repeat="article in articles">
                 <a data-ng-href="{{article.url}}" class="list-group-item ariticle-panel">
                     <div class="header-panel">
@@ -21,8 +20,6 @@
                     </div>
                 </a>
                 <a data-ng-href="{{article.url}}" class="list-group-item ariticle-panel">    
-                    <hr>
-                    
                     <p class="list-group-item-text">{{article.content}}</p>
 
                     <div class="row">
