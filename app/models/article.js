@@ -35,7 +35,8 @@ var ArticleSchema = new Schema({
 	},
 	votes: {
 		type: Number,
-		default: 0
+		default: 0,
+		index: true
 	},
 	user: {
 		type: Schema.ObjectId,

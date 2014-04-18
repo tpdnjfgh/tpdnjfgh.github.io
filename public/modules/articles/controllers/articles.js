@@ -4,6 +4,31 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
     function($scope, $stateParams, $location, Authentication, Articles) {
         $scope.authentication = Authentication;
 
+            
+        $scope.toggleMode = function() {
+            
+            this.is_newest = !this.is_newest;
+
+            
+            if(this.is_newest) {
+                Articles.getByNewest(function(articles) {
+                    $scope.articles = articles;
+
+                    console.log(articles);
+                });
+
+            } else {
+                Articles.getByVotes(function(articles) {
+                    $scope.articles = articles;
+                    console.log(articles);
+                });
+            }
+            
+
+            
+            console.log(this.is_newest);
+        }
+
         $scope.vote = function(article) {
             if (!article.updated) {
                 article.updated = [];
@@ -60,7 +85,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
         };
 
         $scope.find = function() {
-            Articles.query(function(articles) {
+            Articles.getByNewest(function(articles) {
                 $scope.articles = articles;
             });
         };

@@ -73,15 +73,23 @@ exports.delete = function(req, res) {
  * List of Articles
  */
 exports.list = function(req, res) {
-	Article.find().sort('-created').populate('user', 'displayName').exec(function(err, articles) {
-		if (err) {
-			res.render('error', {
-				status: 500
-			});
-		} else {
-			res.jsonp(articles);
-		}
-	});
+
+	var sort = req.query.sort || '-created';
+
+	Article
+		.find()
+		.sort(sort)
+		.limit(100)
+		.populate('user', 'displayName').
+		exec(function(err, articles) {
+			if (err) {
+				res.render('error', {
+					status: 500
+				});
+			} else {
+				res.jsonp(articles);
+			}
+		});
 };
 
 /**
