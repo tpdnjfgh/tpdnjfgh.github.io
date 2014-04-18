@@ -3,7 +3,7 @@
 module.exports = {
 	db: 'mongodb://localhost/one-dev',
 	app: {
-		title: '세월호'
+		title: '세월호 - 손가락으로 하늘을 가릴쏘냐'
 	},
 	facebook: {
 		clientID: '292918034205739',
