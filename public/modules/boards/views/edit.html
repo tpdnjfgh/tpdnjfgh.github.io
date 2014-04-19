@@ -1,0 +1,23 @@
+<section data-ng-controller="BoardsController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>글 수정</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()">
+            <fieldset>
+                <div class="form-group">
+                    <div class="alert alert-success">
+                      상대에게 준 상처는 결국 본인에게 다시 돌아옵니다.
+                    </div>
+                    
+                    <div class="controls">
+                        <input type="text" data-ng-model="board.content" id="content" class="form-control" placeholder="손가락으로 하늘을 가릴쏘냐" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>

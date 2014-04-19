@@ -1,0 +1,16 @@
+<section data-ng-controller="BoardsController" data-ng-init="find()">
+    <div class="page-header">
+        <a href="/#!/boards/create" class="btn btn-default">
+          글 작성하기 | 상대에게 준 상처는 결국 본인에게 다시 돌아옵니다. 
+        </a>
+    </div>
+    
+    <div class="list-group">
+        <a data-ng-repeat="board in boards" data-ng-href="#!/boards/{{board._id}}" class="list-group-item" style="margin-bottom:10px;">
+            <strong class="list-group-item-text">{{board.user.displayName}}</strong>
+            <small class="list-group-item-text pull-right">{{board.created | date:'medium'}}</small>
+            <hr style="margin-top:10px;"/>
+            <h4 class="list-group-item-heading">{{board.content}}</h4>
+        </a>
+    </div>
+</section>

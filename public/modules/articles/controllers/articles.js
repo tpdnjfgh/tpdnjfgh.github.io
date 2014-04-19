@@ -27,7 +27,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
             
             console.log(this.is_newest);
-        }
+        };
 
         $scope.vote = function(article) {
             if (!article.updated) {
@@ -39,7 +39,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
             article.$update(function() {
                 // $location.path('articles/' + article._id);
             });
-        }
+        };
 
         $scope.create = function() {
             var article = new Articles({

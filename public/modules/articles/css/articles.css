@@ -29,3 +29,8 @@ pre {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+
+a.list-group-item {
+  background-color:#F6F9FA;
+}
