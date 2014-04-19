@@ -1,0 +1,14 @@
+<section data-ng-controller="VotesController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Votes</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="vote in votes" data-ng-href="#!/votes/{{vote._id}}" class="list-group-item">
+            <small class="list-group-item-text">{{vote.created | date:'medium'}} / {{vote.user.displayName}}</small>
+            <h4 class="list-group-item-heading">{{vote.name}}</h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!votes || votes.length">
+    	No Votes yet, why don't you <a href="/#!/votes/create">create one</a>?
+    </div>
+</section>

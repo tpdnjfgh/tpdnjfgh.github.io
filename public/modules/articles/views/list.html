@@ -1,17 +1,36 @@
-<section data-ng-controller="ArticlesController" data-ng-init="find()">
+<section data-ng-controller="ArticlesController" data-ng-init="findAll()">
 
-    <!-- Main component for a primary marketing message or call to action -->
-    
-    <div class="row">
+    <div class="row" style="margin-top: -50px">
         <div class="col-lg-12">
             <img src="/modules/core/img/main/main.jpg" width='100%'>
         </div>
     </div>
 
-    <div class="row" style="margin-top:10px">
+    <hr>
+    
+    <div class="row">
+        <div class="col-xs-12">
+          <div>
+            <h2>세월호 참사의 책임을 박근혜 대통령에게 물어야 한다 ?</h2>
+            <em><h6>* 클릭 정보는 기록되지 않습니다. 그러나 장난으로는 클릭하지 말아주세요.</h6></em>
+          </div>  
+          <div class="range">
+            <outputleft ng-click="voteNo(vote);" id="rangePrimary" >NO ({{vote.no}})</outputleft>
+            <!-- <input type="range" name="range" min="1" max="100" value="{{vote.no}}" onchange="rangePrimary.value=value"> -->
+            <outputright ng-click="voteYes(vote);" id="rangePrimary" >YES ({{vote.yes}})</outputright>
+          </div>
+        </div>
+
+    </div>
+
+    
+    <hr>
+
+    <div class="row" style="margin-top:50px;">
+
         <div class="col-lg-12">
-            <div class="alert alert-warning">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <div class="alert" data-ng-show="noty" ng-init="noty=true">
+              <button type="button" class="close" data-dismiss="alert" data-ng-click="noty=!noty" aria-hidden="true">&times;</button>
               <strong>내용을 클릭하면 본문 글의 링크로 이동합니다.</strong>
             </div>
         </div>
@@ -19,11 +38,14 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <a data-ng-href="#!" data-ng-click="toggleMode();" ng-init="is_newest=true"><span class="pull-right" style="padding-top:15px"><strong>손가락으로 하늘을 가릴쏘냐</strong></span></a>
+            <a class="btn pull-right" data-ng-href="#!" data-ng-click="toggleMode();" ng-show="is_newest" ng-init="is_newest=true"><span><strong>관심이 높은 글 순으로 정렬</strong></span></a>
+            <a class="btn pull-right" data-ng-href="#!" data-ng-click="toggleMode();" ng-show="!is_newest" ng-init="is_newest=true"><span><strong>최신 등록된 순으로 정렬</strong></span></a>
+
         </div>
     </div>
     
 
+    
     <div class="row">
         <div class="col-lg-12">
             <div class="list-group" data-ng-repeat="article in articles">
