@@ -12,11 +12,16 @@
 	</div>
 	
 	<nav class="collapse navbar-collapse " collapse="!isCollapsed" role="navigation">
-		<ul class="nav navbar-nav" data-ng-show="authentication.user">
-			<li data-ng-repeat="item in menu" data-ng-show="authentication.user" ui-route="{{item.uiRoute}}" ng-class="{active: $uiRoute}">
-				<a href="/#!/{{item.link}}">{{item.title}}</a>
+		<ul class="nav navbar-nav">
+			<li ui-route="/boards" ng-class="{active: $uiRoute}">
+				<a href="/#!/boards">소통</a>
+			</li>
+			<li data-ng-show="authentication.user" ui-route="/articles/create" ng-class="{active: $uiRoute}">
+				<a href="/#!/boards">+뉴스등록</a>
 			</li>
 		</ul>
+		
+
 		<ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
 			<li class="divider-vertical"></li>
 			<li ui-route="/signin" ng-class="{active: $uiRoute}">
