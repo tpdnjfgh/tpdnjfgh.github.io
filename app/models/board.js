@@ -20,6 +20,11 @@ var BoardSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
+	votes: {
+		type: Number,
+		default: 0,
+		index: true
+	},
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
