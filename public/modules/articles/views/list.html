@@ -54,7 +54,7 @@
                     </div>
                 </a>
                 <a data-ng-href="{{article.url}}" class="list-group-item ariticle-panel">    
-                    <p class="list-group-item-text">{{article.content}}</p>
+                    <p class="list-group-item-text">{{article.content | limitTo: 1000}}</p>
 
                     <div class="row">
                         <div class="col-lg-12">
