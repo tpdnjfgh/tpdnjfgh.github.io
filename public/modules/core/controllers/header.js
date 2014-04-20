@@ -6,7 +6,7 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
 		$scope.isCollapsed = false;
 
 		$scope.menu = [{
-			title: '소통',
+			title: 'to 박근햬 대통령',
 			link: 'boards',
 			uiRoute: '/boards'
 		},{
