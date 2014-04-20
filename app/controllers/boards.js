@@ -73,7 +73,14 @@ exports.delete = function(req, res) {
  * List of Boards
  */
 exports.list = function(req, res) {
-	Board.find().sort('-created').populate('user', 'displayName').exec(function(err, boards) {
+	
+	var sort = req.query.sort || '-created';
+	
+	Board.find()
+		.sort(sort)
+		.limit(100)
+		.populate('user', 'displayName')
+		.exec(function(err, boards) {
 		if (err) {
 			res.render('error', {
 				status: 500

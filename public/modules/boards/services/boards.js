@@ -7,6 +7,16 @@ angular.module('boards').factory('Boards', ['$resource', function($resource) {
     }, {
         update: {
             method: 'PUT'
+        },
+        getByVotes: {
+          method: 'GET',
+          params: { sort: '-votes' }, 
+          isArray: true 
+        },
+        getByNewest: {
+          method: 'GET',
+          params: { sort: '-created' }, 
+          isArray: true 
         }
     });
 }]);

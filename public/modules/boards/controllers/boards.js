@@ -5,6 +5,40 @@ angular.module('boards').controller('BoardsController', ['$scope', '$stateParams
     function($scope, $stateParams, $location, Authentication, Boards) {
         $scope.authentication = Authentication;
 
+        $scope.voting = function(board) {
+            if (!board.updated) {
+                board.updated = [];
+            }
+            
+            board.votes += 1;
+
+            board.$update(function() {
+                // $location.path('articles/' + article._id);
+            });
+        };
+
+        $scope.toggleMode = function() {
+            
+            this.is_newest = !this.is_newest;
+
+            console.log(this.is_newest);
+            
+            if(this.is_newest) {
+                Boards.getByNewest(function(boards) {
+                    $scope.boards = boards;
+
+                    console.log(boards);
+                });
+
+            } else {
+                Boards.getByVotes(function(boards) {
+                    $scope.boards = boards;
+                    console.log(boards);
+                });
+            }
+
+        };
+
         // Create new Board
         $scope.create = function() {
         	// Create new Board object
