@@ -48,7 +48,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
             console.log(this.is_newest);
         };
 
-        $scope.vote = function(article) {
+        $scope.voting = function(article) {
             if (!article.updated) {
                 article.updated = [];
             }
