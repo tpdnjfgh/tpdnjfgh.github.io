@@ -29,3 +29,9 @@ border-top: 8px solid #C6C6C6;
 
 }
 
+.list-group-item:first-child.popular{
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+border-top: 8px solid #EEA236;
+
+}

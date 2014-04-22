@@ -103,7 +103,16 @@ angular.module('boards').controller('BoardsController', ['$scope', '$stateParams
         $scope.findAll = function() {
 
             this.find();
+            this.findPopular();
             this.findVote();
+
+        };
+        
+        // Find a list of Boards
+        $scope.findPopular = function() {
+            Boards.getPopulars(function(boards) {
+                $scope.popularBoards = boards;
+            });
 
         };
 

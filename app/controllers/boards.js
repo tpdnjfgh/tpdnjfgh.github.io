@@ -75,10 +75,11 @@ exports.delete = function(req, res) {
 exports.list = function(req, res) {
 	
 	var sort = req.query.sort || '-created';
+	var limit = req.query.limit || 200;
 	
 	Board.find()
 		.sort(sort)
-		.limit(100)
+		.limit(limit)
 		.populate('user', 'displayName providerData.link')
 		.exec(function(err, boards) {
 		if (err) {
