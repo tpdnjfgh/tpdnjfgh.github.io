@@ -66,7 +66,7 @@
                 <small class="list-group-item-text pull-right">{{board.created | date:'medium'}}</small>
         </a>
         <a data-ng-href="#!/boards/{{board._id}}" class="list-group-item">
-                <h4 class="list-group-item-heading">{{board.content | limitTo: 100}}</h4>
+                <h4 class="list-group-item-heading">{{board.content | limitTo: 300}}</h4>
         </a>
         <a data-ng-href="#!/boards" class="list-group-item btn" data-ng-click="voting(board);">
             <strong style="color:#0059A6"><i class="fa fa-thumbs-up"></i> [ {{board.votes}} ]</strong>
