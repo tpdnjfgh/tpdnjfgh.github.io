@@ -5,8 +5,8 @@ var path = require('path'),
 
 module.exports = {
 	app: {
-		title: '세월호 - 손가락으로 하늘을 가릴쏘냐',
-		description: '세월호 - 손가락으로 하늘을 가릴쏘냐',
+		title: '세월호 - 손바닥으로 하늘을 가릴쏘냐',
+		description: '세월호 - 손바닥으로 하늘을 가릴쏘냐',
 		keywords: '세월호'
 	},
 	root: rootPath,
