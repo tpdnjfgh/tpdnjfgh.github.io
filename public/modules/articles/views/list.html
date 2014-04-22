@@ -21,8 +21,8 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <a class="btn pull-right" data-ng-href="#!" data-ng-click="toggleMode();" ng-show="is_newest" ng-init="is_newest=true"><span><strong>관심이 높은 글 순으로 정렬</strong></span></a>
-            <a class="btn pull-right" data-ng-href="#!" data-ng-click="toggleMode();" ng-show="!is_newest" ng-init="is_newest=true"><span><strong>최신 등록된 순으로 정렬</strong></span></a>
+            <a class="btn pull-right" data-ng-href="#!/articles" data-ng-click="toggleMode();" ng-show="is_newest" ng-init="is_newest=true"><span><strong>관심이 높은 글 순으로 정렬</strong></span></a>
+            <a class="btn pull-right" data-ng-href="#!/articles" data-ng-click="toggleMode();" ng-show="!is_newest" ng-init="is_newest=true"><span><strong>최신 등록된 순으로 정렬</strong></span></a>
 
         </div>
     </div>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </a>
-                <a data-ng-href="#!" class="list-group-item ariticle-panel" data-ng-click="voting(article);">
+                <a data-ng-href="#!/articles" class="list-group-item ariticle-panel" data-ng-click="voting(article);">
                     <p>
                         <small class="list-group-item-text">{{article.created | date:'medium'}} / {{article.user.displayName}}</small>
                         <span class="pull-right"><strong>손바닥으로 하늘을 가릴쏘냐 | {{article.votes || 0}} </strong></span>
