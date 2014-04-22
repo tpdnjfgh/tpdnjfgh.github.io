@@ -40,11 +40,11 @@
                 <strong class="list-group-item-text">{{board.user.displayName}}</strong>
                 <small class="list-group-item-text pull-right">{{board.created | date:'medium'}}</small>
                 <hr style="margin-top:10px;"/>
-                <h5 class="list-group-item-heading">{{board.content | limitTo: 500}}</h5>
+                <h4 class="list-group-item-heading">{{board.content | limitTo: 100}}</h4>
         </a>
 
         <a style="margin-top:4px;" data-ng-href="#!/boards" class="list-group-item btn" data-ng-click="voting(board);">
-            <strong>공감 | {{board.votes}}</strong>
+            <strong><i class="fa fa-arrow-up"></i> 공감 [ {{board.votes}} ]</strong>
         </a>
         
         
