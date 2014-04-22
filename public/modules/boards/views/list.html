@@ -42,7 +42,7 @@
                 <small class="list-group-item-text pull-right">{{popular.created | date:'medium'}}</small>
         </a>
         <a style="margin:0px" data-ng-href="#!/boards/{{popular._id}}" class="list-group-item" >
-                <h4 class="list-group-item-heading">{{popular.content | limitTo: 100}}</h4>
+                <h4 class="list-group-item-heading">{{popular.content | limitTo: 300}}</h4>
         </a>
 
         <a style="margin:0px" data-ng-href="#!/boards" class="list-group-item btn" data-ng-click="voting(board);">
