@@ -8,8 +8,8 @@ module.exports = function(app) {
 	app.get('/votes', votes.list);
 	app.post('/votes', users.requiresLogin, votes.create);
 	app.get('/votes/:voteId', votes.read);
-	app.put('/votes/:voteId', users.requiresLogin, votes.hasAuthorization, votes.update);
-	app.del('/votes/:voteId', users.requiresLogin, votes.hasAuthorization, votes.delete);
+	app.put('/votes/:voteId', users.requiresLogin, votes.update);
+	app.del('/votes/:voteId', users.requiresLogin, votes.delete);
 
 	// Finish by binding the Vote middleware
 	app.param('voteId', votes.voteByID);

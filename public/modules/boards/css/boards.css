@@ -2,6 +2,10 @@
 
 
 a.list-group-item {
-  background-color:#F4F4EE;
-  margin-bottom: 10px;
+  background-color:#EFF2F3;
+  
+}
+
+hr {
+border-top: 2px solid #FFFFFF;
 }

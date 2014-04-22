@@ -12,7 +12,9 @@ var mongoose = require('mongoose'),
  */
 exports.create = function(req, res) {
 	var vote = new Vote(req.body);
-	vote.user = req.user;
+	// vote.user = req.user;
+
+	console.log('TEST', vote);
 
 	vote.save(function(err) {
 		if (err) {

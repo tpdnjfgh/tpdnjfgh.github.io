@@ -34,16 +34,16 @@
         </div>
     </div>
     
-    <div class="list-group" data-ng-repeat="board in boards">
+    <div class="list-group" data-ng-repeat="board in boards" style="margin-bottom:50px;">
         
-        <a data-ng-href="#!/boards/{{board._id}}" class="list-group-item" style="margin-bottom:10px;">
+        <a data-ng-href="#!/boards/{{board._id}}" class="list-group-item" >
                 <strong class="list-group-item-text">{{board.user.displayName}}</strong>
                 <small class="list-group-item-text pull-right">{{board.created | date:'medium'}}</small>
                 <hr style="margin-top:10px;"/>
-                <h5 class="list-group-item-heading">{{board.content}}</h5>
+                <h5 class="list-group-item-heading">{{board.content | limitTo: 500}}</h5>
         </a>
 
-        <a style="" data-ng-href="#!/boards" class="list-group-item btn" data-ng-click="voting(board);">
+        <a style="margin-top:4px;" data-ng-href="#!/boards" class="list-group-item btn" data-ng-click="voting(board);">
             <strong>공감 | {{board.votes}}</strong>
         </a>
         
