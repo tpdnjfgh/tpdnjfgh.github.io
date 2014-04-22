@@ -79,7 +79,7 @@ exports.list = function(req, res) {
 	Board.find()
 		.sort(sort)
 		.limit(100)
-		.populate('user', 'displayName')
+		.populate('user', 'displayName providerData.link')
 		.exec(function(err, boards) {
 		if (err) {
 			res.render('error', {

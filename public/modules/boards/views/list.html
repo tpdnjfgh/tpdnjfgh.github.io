@@ -35,11 +35,11 @@
     </div>
     
     <div class="list-group" data-ng-repeat="board in boards" style="margin-bottom:50px;">
-        
-        <a data-ng-href="#!/boards/{{board._id}}" class="list-group-item" >
+        <a data-ng-href="{{board.user.providerData.link}}" class="list-group-item" >
                 <strong class="list-group-item-text">{{board.user.displayName}}</strong>
                 <small class="list-group-item-text pull-right">{{board.created | date:'medium'}}</small>
-                <hr style="margin-top:10px;"/>
+        </a>
+        <a data-ng-href="#!/boards/{{board._id}}" class="list-group-item" >
                 <h4 class="list-group-item-heading">{{board.content | limitTo: 100}}</h4>
         </a>
 
