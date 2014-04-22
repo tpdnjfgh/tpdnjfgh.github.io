@@ -4,8 +4,8 @@ body {
 
 .navbar-inverse {
 background-color: #D9C077;
-background-image: -webkit-linear-gradient(top, #EEA236 0%, #EEA236 100%); */
-border-color: #080808;
+background-image: -webkit-linear-gradient(top, #EEA236 0%, #EEA236 100%);
+border-color: #FFFFFF;
 }
 
 .content {
