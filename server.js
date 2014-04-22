@@ -6,6 +6,8 @@
 var config = require('./config/config'),
 	mongoose = require('mongoose');
 
+require('newrelic');
+
 /**
  * Main application entry file.
  * Please note that the order of loading is important.
