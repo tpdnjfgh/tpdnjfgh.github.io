@@ -30,44 +30,43 @@
 
     <div class="row">
         <div class="col-lg-12 pull-right">
-            <h5><strong><span style="color: #BC4133">관심도가 가장 높은 글</span></strong></h5>
+            <h5 class="pull-left"><strong><span style="color: #BC4133"><i class="fa fa-thumbs-up"></i> 관심도가 가장 높은 글</span></strong></h5>
         </div>
     </div>
 
     <div class="list-group" data-ng-repeat="popular in popularBoards" style="margin-bottom:50px;">
-        <a data-ng-href="{{popular.user.providerData.link}}" class="list-group-item popular" >
-                <strong class="list-group-item-text">{{popular.user.displayName}}</strong>
+        <a style="margin:0px" data-ng-href="{{popular.user.providerData.link}}" class="list-group-item popular" >
+                <em><strong class="list-group-item-text">{{popular.user.displayName}}</strong></em>
                 <small class="list-group-item-text pull-right">{{popular.created | date:'medium'}}</small>
         </a>
-        <a data-ng-href="#!/boards/{{popular._id}}" class="list-group-item" >
+        <a style="margin:0px" data-ng-href="#!/boards/{{popular._id}}" class="list-group-item" >
                 <h4 class="list-group-item-heading">{{popular.content | limitTo: 100}}</h4>
         </a>
 
-        <a style="margin-top:4px;" data-ng-href="#!/boards" class="list-group-item btn" data-ng-click="voting(board);">
-            <h4><strong><i class="fa fa-arrow-up"></i> 공감 [ {{popular.votes}} ]</strong></h4>
+        <a style="margin:0px" data-ng-href="#!/boards" class="list-group-item btn" data-ng-click="voting(board);">
+            <h4><strong style="color:#BC4133"><i class="fa fa-thumbs-up"></i> [ {{popular.votes}} ]</strong></h4>
         </a>
     </div>
 
 
     <div class="row">
-        <div class="col-lg-12">
-            <a class="btn pull-right" data-ng-href="#!/boards" data-ng-click="toggleMode();" ng-show="is_newest" ng-init="is_newest=true"><h5><strong><span style="color: #0059A6">관심이 높은 글 순으로 정렬</span></strong></h5></a>
-            <a class="btn pull-right" data-ng-href="#!/boards" data-ng-click="toggleMode();" ng-show="!is_newest" ng-init="is_newest=true"><h5><strong><span style="color: #0059A6">최신 등록된 순으로 정렬</span></strong></h5></a>
+        <div class="col-lg-12" >
+            <a class="btn pull-left" data-ng-href="#!/boards" data-ng-click="toggleMode();" ng-show="is_newest" ng-init="is_newest=true"><h5><strong><span style="color: #0059A6"><i class="fa fa-repeat"></i> 관심이 높은 글 순으로 정렬</span></strong></h5></a>
+            <a class="btn pull-left" data-ng-href="#!/boards" data-ng-click="toggleMode();" ng-show="!is_newest" ng-init="is_newest=true"><h5><strong><span style="color: #0059A6"><i class="fa fa-repeat"></i> 최신 등록된 순으로 정렬</span></strong></h5></a>
 
         </div>
     </div>
     
     <div class="list-group" data-ng-repeat="board in boards" style="margin-bottom:50px;">
-        <a data-ng-href="{{board.user.providerData.link}}" class="list-group-item" >
-                <strong class="list-group-item-text">{{board.user.displayName}}</strong>
+        <a data-ng-href="{{board.user.providerData.link}}" class="list-group-item">
+                <em><strong class="list-group-item-text">{{board.user.displayName}}</strong></em>
                 <small class="list-group-item-text pull-right">{{board.created | date:'medium'}}</small>
         </a>
-        <a data-ng-href="#!/boards/{{board._id}}" class="list-group-item" >
+        <a data-ng-href="#!/boards/{{board._id}}" class="list-group-item">
                 <h4 class="list-group-item-heading">{{board.content | limitTo: 100}}</h4>
         </a>
-
-        <a style="margin-top:4px;" data-ng-href="#!/boards" class="list-group-item btn" data-ng-click="voting(board);">
-            <strong><i class="fa fa-arrow-up"></i> 공감 [ {{board.votes}} ]</strong>
+        <a data-ng-href="#!/boards" class="list-group-item btn" data-ng-click="voting(board);">
+            <strong style="color:#0059A6"><i class="fa fa-thumbs-up"></i> [ {{board.votes}} ]</strong>
         </a>
         
         

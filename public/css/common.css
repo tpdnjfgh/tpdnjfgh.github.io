@@ -1,3 +1,7 @@
+body {
+  background-color: #EFF2F3;
+}
+
 .navbar-inverse {
 background-color: #D9C077;
 background-image: -webkit-linear-gradient(top, #EEA236 0%, #EEA236 100%); */
@@ -34,4 +38,18 @@ border-top-left-radius: 4px;
 border-top-right-radius: 4px;
 border-top: 8px solid #EEA236;
 
+}
+
+
+.list-group-item {
+position: relative;
+display: block;
+padding: 10px 15px;
+margin-bottom: -1px;
+background-color: #FFFFFF;
+border: 1px solid #FFFFFF; 
+}
+
+a.list-group-item {
+  background-color: #fff;
 }
