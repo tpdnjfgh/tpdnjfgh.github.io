@@ -19,7 +19,6 @@
             <outputright ng-click="voteYes(vote);" id="rangePrimary" >YES ({{vote.yes}})</outputright>
           </div>
         </div>
-
     </div>
 
     
@@ -54,7 +53,7 @@
                     </div>
                 </a>
                 <a data-ng-href="{{article.url}}" class="list-group-item ariticle-panel">    
-                    <p class="list-group-item-text">{{article.content | limitTo: 1000}}</p>
+                    <p class="list-group-item-text">{{article.content | limitTo: 300}}</p>
 
                     <div class="row">
                         <div class="col-lg-12">

@@ -1,10 +1,24 @@
-<section data-ng-controller="BoardsController" data-ng-init="find()">
+<section data-ng-controller="BoardsController" data-ng-init="findAll()">
 
     <div class="row" style="margin-top: -50px">
         <div class="col-lg-12">
-            <img src="/modules/boards/img/park.jpg" width='100%'>
+            <img src="/modules/core/img/main/main.jpg" width='100%'>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+          <div>
+            <h2>박근혜 대통령의 국정운영 잘하고 있다?</h2>
+            <em><h6>* 클릭 정보는 기록되지 않습니다. 그러나 장난으로는 클릭하지 말아주세요.</h6></em>
+          </div>  
+          <div class="range">
+            <outputleft ng-click="voteNo(vote);" id="rangePrimary" >NO ({{vote.no}})</outputleft>
+            <outputright ng-click="voteYes(vote);" id="rangePrimary" >YES ({{vote.yes}})</outputright>
+          </div>
+        </div>
+    </div>
+
 
     <div class="page-header">
         <a href="/#!/boards/create" class="btn btn-warning">
@@ -29,7 +43,7 @@
                 <h5 class="list-group-item-heading">{{board.content}}</h5>
         </a>
 
-        <a data-ng-href="#!/boards" class="list-group-item btn" data-ng-click="voting(board);">
+        <a style="" data-ng-href="#!/boards" class="list-group-item btn" data-ng-click="voting(board);">
             <strong>공감 | {{board.votes}}</strong>
         </a>
         

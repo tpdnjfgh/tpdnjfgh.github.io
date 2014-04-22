@@ -1,9 +1,28 @@
 'use strict';
 
 // Boards controller
-angular.module('boards').controller('BoardsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Boards',
-    function($scope, $stateParams, $location, Authentication, Boards) {
+angular.module('boards').controller('BoardsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Boards', 'Votes',
+    function($scope, $stateParams, $location, Authentication, Boards, Votes) {
         $scope.authentication = Authentication;
+
+        
+        $scope.voteNo = function(vote) {
+            vote.no += 1;
+
+            vote.$update(function() {
+                // $location.path('articles/' + article._id);
+            });
+        };
+
+        $scope.voteYes = function(vote) {
+            vote.yes += 1;
+
+            vote.$update(function() {
+                // $location.path('articles/' + article._id);
+            });
+        };
+
+
 
         $scope.voting = function(board) {
             if (!board.updated) {
@@ -78,6 +97,20 @@ angular.module('boards').controller('BoardsController', ['$scope', '$stateParams
 
             board.$update(function() {
                 $location.path('boards/' + board._id);
+            });
+        };
+
+        $scope.findAll = function() {
+
+            this.find();
+            this.findVote();
+
+        };
+
+        // Find a list of Votes
+        $scope.findVote = function() {
+            Votes.query(function(votes) {
+                $scope.vote = votes[0];
             });
         };
 
