@@ -8,7 +8,7 @@ module.exports = function(app) {
 	app.get('/boards', boards.list);
 	app.post('/boards', users.requiresLogin, boards.create);
 	app.get('/boards/:boardId', boards.read);
-	app.put('/boards/:boardId', users.requiresLogin, boards.hasAuthorization, boards.update);
+	app.put('/boards/:boardId', users.requiresLogin, boards.update);
 	app.del('/boards/:boardId', users.requiresLogin, boards.hasAuthorization, boards.delete);
 
 	// Finish by binding the Board middleware
